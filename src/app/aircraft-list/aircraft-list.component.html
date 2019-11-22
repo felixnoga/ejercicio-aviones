@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <span>Aircraft App</span>
+</mat-toolbar>
+<div class="container">
+  <mat-card class="aircraft-card" *ngFor="let aircraft of data">
+    <mat-card-header>
+      <img mat-card-avatar class="logo" src="assets/{{aircraft.logo}}" alt="{{aircraft.manufacturer}}">
+      <mat-card-title-group>
+        <mat-card-title>{{aircraft.manufacturer}}</mat-card-title>
+        <mat-card-subtitle>{{aircraft.model}}</mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      <div class="card-content-block"><fa-icon [icon]="faArrowAltV"></fa-icon> Altura: {{aircraft.dimensions.height}}m</div>
+      <div class="card-content-block"><fa-icon [icon]="faArrowAltH"></fa-icon> Anchura: {{aircraft.dimensions.width}}m</div>
+      <div class="card-content-block"><fa-icon [icon]="faUserCog"></fa-icon> Capacidad Pasajeros: {{aircraft.pass_capacity}}</div>
+      <div class="card-image"><img src="assets/{{aircraft.image}}" alt="{{aircraft.manufacturer}}"></div>
+    </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-flat-button color="primary" (click)="openDialog(aircraft)">Details</button>
+      </mat-card-actions>
+
+  </mat-card>
+</div>
+

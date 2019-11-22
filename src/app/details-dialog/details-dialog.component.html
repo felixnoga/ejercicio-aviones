@@ -1,0 +1,40 @@
+<h2 mat-dialog-title><img src="assets/{{data.logo}}" alt="data.manufacturer" width="50px"> {{data.manufacturer}} {{data.model}}</h2>
+
+<mat-dialog-content>
+  <div class="container">
+    <img src="assets/{{data.image}}" alt="{{data.manufacturer}}">
+    <div class="details">
+      <p>Fabricante: {{data.manufacturer}}</p>
+      <p>Modelo: {{data.model}}</p>
+      <mat-divider></mat-divider>
+
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Dimensiones
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>Anchura: {{data.dimensions.width}} m</p>
+          <p>Altura: {{data.dimensions.height}} m</p>
+          <p>Longitud: {{data.dimensions.length}} m</p>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Capacidades
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>Techo de vuelo: {{data.techo}} m</p>
+          <p>Capacidad máxima de pasajeros: {{data.pass_capacity}}</p>
+          <p>Capacidad fuel: {{data.fuel_capacity}} Kg.</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-dialog-close mat-flat-button color="warn"><fa-icon [icon]="faTimesCircle"></fa-icon> Cerrar</button>
+</mat-dialog-actions>
